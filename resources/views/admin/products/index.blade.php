@@ -18,7 +18,7 @@
             <tr>
                 <th scope="row">1</th>
                 <td>{{ $product->name }}</td>
-                <td>{{ $categories[$product->category_id -1]->name }}</td>
+                <td>{{ $product->category_id }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->quantity }}</td>
                 <td>

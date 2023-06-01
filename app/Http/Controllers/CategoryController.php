@@ -39,6 +39,7 @@ class CategoryController extends Controller
         return redirect('categories');
     }
 
+
     public function destroy($id)
     {
         Category ::find($id)->delete();

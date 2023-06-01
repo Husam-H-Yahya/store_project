@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 <div class="py-3">
-    <form action="{{ url('products/update'.$product->id) }}" method="post">
+    <form action="{{ url('products/update/'.$product->id) }}" method="POST">
         @csrf
-        @method('patch')
+        @method('PATCH')
     <div class="mb-3">
         <label for="nameFormControlInput" class="form-label">اسم المنتج</label>
         <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" >
@@ -19,12 +19,12 @@
 
       <div class="mb-3">
         <label for="descriptionFormControlTextarea1" class="form-label">وصف المنتج</label>
-        <textarea class="form-control" id="description" name="description" rows="3">{{ $product->description }}</textarea>
+        <textarea  class="form-control" id="description" name="description" rows="3">{{ $product->description }}</textarea>
       </div>
       <div class="mb-3">
         <label for="categoryFormControlTextarea1" class="form-label"> اختر الصنف</label>
 
-        <select class="form-control" name="category" id="category">
+        <select class="form-control" name="category_id" id="category">
             <option value="{{ $category_name->id }}">{{ $category_name->name }}</option>
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
